@@ -1,10 +1,10 @@
 {
-  "name": "gulp-img64html",
+  "name": "gulp-html-img64",
   "version": "1.0.0",
   "description": "Convert image to base64 in html",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,15 @@
     "gulp"
   ],
   "author": "Marek Marcinkiewicz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "mime": "^2.2.0",
+    "path": "^0.12.7",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "gulp-util": "^3.0.8",
+    "mocha": "^5.0.0"
+  }
 }
