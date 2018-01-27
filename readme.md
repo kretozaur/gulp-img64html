@@ -1,4 +1,4 @@
-# gulp-img64-html [![Build Status](https://travis-ci.org/kretozaur/gulp-img64html.png)](https://travis-ci.org/kretozaur/gulp-img64html)
+# gulp-html-img64 [![Build Status](https://travis-ci.org/kretozaur/gulp-img64html.png)](https://travis-ci.org/kretozaur/gulp-img64html)
 
 Convert and replace image in HTML to base64.
 
