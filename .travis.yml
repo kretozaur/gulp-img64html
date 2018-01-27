@@ -1,5 +1,12 @@
-language: node_js
+deploy:
 node_js:
   - 7
   - 6
   - node
+  provider: npm
+  email: marcinkiewicz.marek@gmail.com
+  api_key:
+    secure: GUvVrxVtMOcZv8gLk9UTeoOmr8SDo27VsISSl70jnmiQZQ1DB+rdccXGG/R8QCeJ828yRv61hnGaseygRBBwfW1QNvIlM7CEozTMDcLwQiPx+c4k995E0Y8bk3SzAvZvonlxgBeuNVlm+xskS3HiEoceROFVH18ZM6Yv6sn1o2k5W0Ny5X5VkdNO6Woq7cojWVmf9igR7h/mwAO4sCSj1kiYrLwuxjDWqw5PxE2U88vXzTOcdf8op7HauoHC7nDXGqmwN5NrfmMoYOEpb5FdYJlYnGN8yBuAWWMHxtHkD29vIpmeD8ZUbXI/gvwi5U0BMIbWZ8W/jp3hTu1nShGte5M/I24Qrlnb7o6pYs89F6d0EsmUFvbRh7B6Myc/EERCmVytGIodBfFHGoPnb0TRdJQlZ+aeE7BMWZhofG4sNMojS4xzt+VbgMoJ+bSeMzO2+ODwmHBx3nkt0b7VOC0E2hRIvq09UPhW9kjDZEq7nKQcLhqMA5tKKcvAy49Ge2FgIp7dtULrLJGXJJjBQjVG5Dqez5Ej1KN6olwoioUzB5RIqSi5FKN6oTAJJ3jtpcCzbX1Vg3091XM9lovXL1AdSDSxBaI20lkYkfRRN7Iy3bxZrI4ksblStQCjX53nGZ915qfvDW2gKCQ39t69Ra9qKLfRTcslR4MG/5h7b0OnVis=
+  on:
+    tags: true
+    repo: kretozaur/gulp-img64html
