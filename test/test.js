@@ -1,9 +1,9 @@
-var base64 = require("../index");
-var path = require('path');
-var gutil = require('gulp-util');
-var fs = require('fs');
+const base64 = require("../index");
+const path = require('path');
+const gutil = require('gulp-util');
+const fs = require('fs');
 
-describe('in buffer mode', function() {
+describe('Html converter', function() {
 
 	it('should replace images in DOM with base64 data', function(done) {
 
