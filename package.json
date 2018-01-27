@@ -1,0 +1,20 @@
+{
+  "name": "gulp-img64html",
+  "version": "1.0.0",
+  "description": "Convert image to base64 in html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kretozaur/gulp-img64html.git"
+  },
+  "keywords": [
+    "images",
+    "base64",
+    "gulp"
+  ],
+  "author": "Marek Marcinkiewicz",
+  "license": "ISC"
+}
