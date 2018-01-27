@@ -6,31 +6,45 @@ var path = require('path');
 
 module.exports = function(options) {
 
-    return through.obj(function(file, enc, callback) {
-        
+    options = options || { imagesDir: "" };
+
+    const excludeMimeTypes = ['application/octet-stream'];
+
+    return through.obj((file, enc, callback) => {
+
         let output = String(file.contents)
         
         const $ = cheerio.load(String(file.contents));
         
-        $('img').each(function(index, img) {
-
-            const src = $(this).attr("src");
-
-            if (src) {
-                const imagePath = path.join(file.base, src);
-                const mimeType = mime.getType(imagePath);
-
-                if (mimeType != 'application/octet-stream') {
-       
-                    const base64 = new Buffer(fs.readFileSync(imagePath)).toString('base64');
-
-                    output = output.replace(src, `data:${mimeType};base64,${base64}`);
-                }
-            }
+        $('img').each((index, img) => {
+            output = convertImage(img, file, output);
         });
 
         file.contents = new Buffer(output);
 
 		return callback(null, file);
     });
+
+    function convertImage(img, file, output) {
+
+        const src = img.attribs["src"];
+    
+        if (src) {
+            const imagePath = path.join(file.base, options.imagesDir, src);
+            const mimeType = mime.getType(imagePath);
+    
+            if (mimeType != 'application/octet-stream') {
+    
+                const base64 = createBase64(imagePath);
+    
+                output = output.replace(src, `data:${mimeType};base64,${base64}`);
+            }
+        }
+
+        return output;
+    }
+    
+    function createBase64(path) {
+        return new Buffer(fs.readFileSync(path)).toString('base64');
+    }
 };

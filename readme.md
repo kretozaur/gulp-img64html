@@ -14,3 +14,16 @@ gulp.task('default', function () {
 	.pipe(gulp.dest('path'));
 });
 ```
+
+```js
+var gulp = require('gulp');
+var img64Html = require('gulp-html-img64');
+
+gulp.task('default', function () {
+	gulp.src('index.html')
+	.pipe(img64Html({
+		imagesDir: '/images'
+	}))
+	.pipe(gulp.dest('path'));
+});
+```
