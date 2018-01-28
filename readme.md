@@ -7,7 +7,7 @@ Convert and replace image in HTML to base64.
 Install with [npm](https://npmjs.org)
 
 ```
-npm install gulp-base64 --save-dev
+npm install gulp-html-img64 --save-dev
 ```
 
 # Examples
