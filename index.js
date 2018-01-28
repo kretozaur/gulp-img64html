@@ -6,7 +6,7 @@ var path = require('path');
 
 module.exports = function(options) {
 
-    options = options || { imagesDir: "" };
+    options = options || { imagesDir: null };
 
     const excludeMimeTypes = ['application/octet-stream'];
 
@@ -30,7 +30,14 @@ module.exports = function(options) {
         const src = img.attribs["src"];
     
         if (src) {
-            const imagePath = path.join(file.base, options.imagesDir, src);
+
+            if (options.imagesDir) {
+                options.imagesDir = path.join(process.cwd(), options.imagesDir)
+            }
+
+            const fileBase = options.imagesDir || file.base;
+            
+            const imagePath = path.join(fileBase, src);
             const mimeType = mime.getType(imagePath);
     
             if (mimeType != 'application/octet-stream') {
