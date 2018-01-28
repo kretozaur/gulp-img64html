@@ -39,7 +39,7 @@ describe('Html converter', function() {
 		});
 
 		var stream = base64({
-			imagesDir: '/images'
+			imagesDir: 'test/fixtures/images'
 		});
 
 		stream.on('data', function(newFile) {
