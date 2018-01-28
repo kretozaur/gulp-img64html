@@ -2,7 +2,37 @@
 
 Convert and replace image in HTML to base64.
 
-## Gulp Task:
+## Install
+
+Install with [npm](https://npmjs.org)
+
+```
+npm install gulp-base64 --save-dev
+```
+
+# Examples
+
+
+
+## input
+```html
+<html>
+    <body>
+        <img src="1x1.png" />
+    </body>
+</html>
+```
+
+## output
+```html
+<html>
+    <body>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" />
+    </body>
+</html>
+```
+
+# Gulp Task
 
 ```js
 var gulp = require('gulp');
@@ -14,6 +44,8 @@ gulp.task('default', function () {
 	.pipe(gulp.dest('path'));
 });
 ```
+
+## gulpt task with options:
 
 ```js
 var gulp = require('gulp');
@@ -27,3 +59,7 @@ gulp.task('default', function () {
 	.pipe(gulp.dest('path'));
 });
 ```
+## Options
+
+  - `imagesDir`  (String)  
+    If you have images in special folder you can specified path to this folder in this option.
