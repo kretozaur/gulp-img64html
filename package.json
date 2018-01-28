@@ -18,13 +18,13 @@
   "author": "Marek Marcinkiewicz",
   "license": "ISC",
   "dependencies": {
-    "assert": "^1.4.1",
     "cheerio": "^1.0.0-rc.2",
     "mime": "^2.2.0",
     "path": "^0.12.7",
     "through2": "^2.0.3"
   },
   "devDependencies": {
+    "assert": "^1.4.1",
     "gulp-util": "^3.0.8",
     "mocha": "^5.0.0"
   }
