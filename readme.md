@@ -48,7 +48,7 @@ npm install gulp-html-img64 --save-dev
 
 ## output
 ```html
-"<html>
+<html>
     <body>
 	<% if(true){ %>
    		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" />
