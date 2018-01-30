@@ -4,8 +4,6 @@ Convert and replace image in HTML to base64.
 
 ## Install
 
-Install with [npm](https://npmjs.org)
-
 ```
 npm install gulp-html-img64 --save-dev
 ```
@@ -32,15 +30,45 @@ npm install gulp-html-img64 --save-dev
 </html>
 ```
 
+> Convert working with templates parser like : ejs, lodash
+
+## input
+```html
+<html>
+    <body>
+	<% if(true){ %>
+   		<img src="1x1.png" />
+	<% } %>
+	<% else{ %>
+		<h1>bar</h1>
+	<% } %>
+    </body>
+</html>
+```
+
+## output
+```html
+"<html>
+    <body>
+	<% if(true){ %>
+   		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" />
+	<% } %>
+	<% else{ %>
+		<h1>bar</h1>
+	<% } %>
+    </body>
+</html>
+```
+
 # Gulp Task
 
 ```js
 var gulp = require('gulp');
-var img64Html = require('gulp-html-img64');
+var htmlImg64 = require('gulp-html-img64');
 
 gulp.task('default', function () {
 	gulp.src('index.html')
-	.pipe(img64Html())
+	.pipe(htmlImg64())
 	.pipe(gulp.dest('path'));
 });
 ```
@@ -49,11 +77,11 @@ gulp.task('default', function () {
 
 ```js
 var gulp = require('gulp');
-var img64Html = require('gulp-html-img64');
+var htmlImg64 = require('gulp-html-img64');
 
 gulp.task('default', function () {
 	gulp.src('index.html')
-	.pipe(img64Html({
+	.pipe(htmlImg64({
 		imagesDir: '/images'
 	}))
 	.pipe(gulp.dest('path'));
