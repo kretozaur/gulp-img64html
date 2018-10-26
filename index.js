@@ -39,8 +39,7 @@ module.exports = function(options) {
             
             const imagePath = path.join(fileBase, src);
             const mimeType = mime.getType(imagePath);
-    
-            if (mimeType != 'application/octet-stream') {
+            if (mimeType && mimeType != 'application/octet-stream') {
     
                 const base64 = createBase64(imagePath);
     
