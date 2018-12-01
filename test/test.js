@@ -52,7 +52,7 @@ describe('Html converter', function() {
 
 	it("should replace images from folder 'images' in DOM with base64 data", function(done) {
 
-		var filename = path.join(__dirname, '/fixtures/test-1.html');
+		var filename = path.join(__dirname, '/fixtures/test-2.html');
 
 		var input = new gutil.File({
 			base: path.dirname(filename),
