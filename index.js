@@ -32,15 +32,14 @@ module.exports = function(options) {
         if (src) {
 
             if (options.imagesDir) {
-                options.imagesDir = path.join(process.cwd(), options.imagesDir)
+                var imagesDir = path.join(process.cwd(), options.imagesDir)
             }
 
-            const fileBase = options.imagesDir || file.base;
+            const fileBase = imagesDir || file.base;
             
             const imagePath = path.join(fileBase, src);
             const mimeType = mime.getType(imagePath);
-    
-            if (mimeType != 'application/octet-stream') {
+            if (mimeType && mimeType != 'application/octet-stream') {
     
                 const base64 = createBase64(imagePath);
     
